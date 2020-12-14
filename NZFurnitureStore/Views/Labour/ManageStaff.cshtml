@@ -1,0 +1,48 @@
+﻿@model IEnumerable<NZFurnitureStore.Models.Labour>
+
+@{
+    ViewBag.Title = "ManageStaff";
+}
+
+<h2>Manage Staff</h2>
+
+<p>
+    @Html.ActionLink("Register New Staff", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Contact)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Skills)
+        </th>
+        <th>Update </th>
+        <th>Remove </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Contact)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Skills)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) </td>
+        <td>
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>
+
+<a href="@Url.Action("headPannel","Head")" class="btn btn-danger">Back to Head Pannel </a>

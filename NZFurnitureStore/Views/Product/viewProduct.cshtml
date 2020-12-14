@@ -1,0 +1,26 @@
+﻿@model IEnumerable<NZFurnitureStore.Models.Product>
+
+@{
+    ViewBag.Title = "viewProduct";
+}
+
+<div class="row">
+    <h2>View Product</h2>
+
+
+    @foreach (var item in Model)
+    {
+    <div class="col-md-9">
+        <img src="~/images/3.jpg">
+        <h1>Name : @Html.DisplayFor(modelItem => item.Name)</h1>
+        
+        <h3> Price :  @Html.DisplayFor(modelItem => item.Price)</h3>
+       <a href="#" class="btn btn-primary">Contact to Buy  </a>
+        
+    </div>
+        
+    }
+
+    
+
+</div>
